@@ -16,6 +16,7 @@ import AuthProvider from './Provider/AuthProvider.jsx';
 import Submited from './component/Submited.jsx';
 import UpdateAssignment from './component/UpdateAssignment.jsx';
 import SeeDetails from './component/SeeDetails.jsx';
+import Confrom from './component/Confrom.jsx';
 
 const router = createBrowserRouter([
   {
@@ -45,19 +46,25 @@ const router = createBrowserRouter([
       {
         path:"/submited",
         element:<Submited></Submited>,
-        loader: () => fetch('https://study-server-site-mohammedrasif-mohammed-rasifs-projects.vercel.app/study')
+        loader: () => fetch('http://localhost:5000/study')
       }
       ,
       {
         path:"/update/:id",
         element:<UpdateAssignment></UpdateAssignment>,
-        loader: ({params}) => fetch(`https://study-server-site-mohammedrasif-mohammed-rasifs-projects.vercel.app/study/${params.id}`)
+        loader: ({params}) => fetch(`http://localhost:5000/study/${params.id}`)
       }
       ,
       {
         path:"/seeDetails/:id",
         element:<SeeDetails></SeeDetails>,
-        loader: ({params}) => fetch(`https://study-server-site-mohammedrasif-mohammed-rasifs-projects.vercel.app/study/${params.id}`)
+        loader: ({params}) => fetch(`http://localhost:5000/study/${params.id}`)
+      }
+      ,
+      {
+        path:"/conform",
+        element:<Confrom></Confrom>,
+        loader:()=>fetch('http://localhost:5000/submited')
       }
     ]
 

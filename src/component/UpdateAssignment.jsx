@@ -19,7 +19,7 @@ const UpdateAssignment = () => {
         const updateDetails = {title,marks,date,assignment,photo,pdf,description}
         //console.log(updateDetails)
 
-        fetch(`https://study-server-site-mohammedrasif-mohammed-rasifs-projects.vercel.app/study/${_id}`,{
+        fetch(`http://localhost:5000/study/${_id}`,{
             method:'PUT',
             headers:{
                 'content-type':'application/json'

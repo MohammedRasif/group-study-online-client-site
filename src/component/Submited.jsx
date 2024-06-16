@@ -3,6 +3,7 @@ import SeeSubmited from "./SeeSubmited";
 
 const Submited = () => {
     const study = useLoaderData();
+    console.log(study)
     return (
         <div className="pt-32">
             {

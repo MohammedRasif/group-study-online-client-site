@@ -16,7 +16,7 @@ const SubmitNow = () => {
         const allDetails = {title,marks,date,assignment,photo,pdf,description}
         //console.log(allDetails)
 
-        fetch('https://study-server-site-mohammedrasif-mohammed-rasifs-projects.vercel.app/study',{credentials:"include"},{
+        fetch('http://localhost:5000/study',{
             method:'POST',
             headers:{
                 'content-type':'application/json'

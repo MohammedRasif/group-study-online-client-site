@@ -5,6 +5,7 @@ import { Link,  useNavigate,   } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import toast from "react-hot-toast";
+import Swal from "sweetalert2";
 // import { useContext } from "react";
 // import { AuthContext } from "../../AuthProvider/AuthProvider";
 // import toast from "react-hot-toast";
@@ -28,24 +29,47 @@ const Login = () => {
         }
     }
 
-    const handleLogin = event =>{
+    const handleLogin = event => {
         event.preventDefault();
-        const form = event.value;
+        const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        //console.log(email,password)
-        signIn(email.password)
-        .then(result =>{
-            const user =result.user;
-           // console.log(user)
-            toast.success('SignIn Successfully')
-        })
-        .catch(error => {
-            //console.log(error)
-            toast.error(error?.massage)
-        })
-        
+        console.log(email, password);
+        signIn(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                Swal.fire({
+                    title: 'User Login Successful.',
+                    showClass: {
+                        popup: 'animate__animated animate__fadeInDown'
+                    },
+                    hideClass: {
+                        popup: 'animate__animated animate__fadeOutUp'
+                    }
+                });
+                navigate(from, { replace: true });
+            })
     }
+
+    // const handleLogin = event =>{
+    //     event.preventDefault();
+    //     const form = event.value;
+    //     const email = form.email.value;
+    //     const password = form.password.value;
+    //     console.log(email,password)
+    //     signIn(email,password)
+    //     .then(result =>{
+    //         const user =result.user;
+    //        console.log(user)
+    //         toast.success('SignIn Successfully')
+    //     })
+    //     .catch(error => {
+    //         //console.log(error)
+    //         toast.error(error?.massage)
+    //     })
+        
+    // }
     return (
         <div>
             <div className="hero min-h-screen bg-base-200">

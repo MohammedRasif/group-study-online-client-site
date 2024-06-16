@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import useAxioSecure from "../Hooks/useAxioSecure";
 
 const SeeSubmited = ({studys}) => {
     const {title,marks,date,assignment,photo,pdf,description,_id} = studys
-
+    const axiosSecure = useAxioSecure()
 
     const handleDelete = _id =>{
         //console.log(_id)
@@ -18,7 +19,7 @@ const SeeSubmited = ({studys}) => {
           }).then((result) => {
             if (result.isConfirmed) {
             
-            fetch(`https://study-server-site-mohammedrasif-mohammed-rasifs-projects.vercel.app/study/${_id}`,{
+            fetch(`http://localhost:5000/study/${_id}`,{
                 method:'DELETE'
             })
             .then(res=>res.json())
@@ -36,6 +37,24 @@ const SeeSubmited = ({studys}) => {
           });
 
     }
+
+    const handleSubmit = async (event) => {
+      console.log("rasif");
+      // event.preventDefault();
+      const allContestSubmited = {
+        name: studys.title,
+        description: studys.description,
+        date: studys.date,
+        marks: studys.marks,
+        photo: studys.photo,
+        assignment: studys.assignment,
+        pdf: studys.pdf
+        
+
+      };
+      const res = await axiosSecure.post("/submited", allContestSubmited);
+      console.log("submited saved", res.data);
+    };
 
 
     return (
@@ -92,7 +111,7 @@ const SeeSubmited = ({studys}) => {
           <button
           onClick={()=>handleDelete(_id)}
           className="btn btn-ghost btn-xs text-blue-800 font-bold">Delete</button>
-          <button className="btn btn-ghost btn-xs text-blue-800 font-bold">Padding</button>
+          <button onClick={handleSubmit} className="btn btn-ghost btn-xs text-blue-800 font-bold">Padding</button>
 
         </th>
       </tr>
