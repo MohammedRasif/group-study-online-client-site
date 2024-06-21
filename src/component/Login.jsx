@@ -31,7 +31,7 @@ const Login = () => {
 
     const handleLogin = event => {
         event.preventDefault();
-        // loginInof
+        // loginInfo
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
