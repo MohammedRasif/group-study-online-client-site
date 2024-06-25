@@ -46,25 +46,25 @@ const router = createBrowserRouter([
       {
         path:"/submited",
         element:<Submited></Submited>,
-        loader: () => fetch('http://localhost:5000/study')
+        loader: () => fetch('https://study-server-site.vercel.app/study')
       }
       ,
       {
         path:"/update/:id",
         element:<UpdateAssignment></UpdateAssignment>,
-        loader: ({params}) => fetch(`http://localhost:5000/study/${params.id}`)
+        loader: ({params}) => fetch(`https://study-server-site.vercel.app/study/${params.id}`)
       }
       ,
       {
         path:"/seeDetails/:id",
         element:<SeeDetails></SeeDetails>,
-        loader: ({params}) => fetch(`http://localhost:5000/study/${params.id}`)
+        loader: ({params}) => fetch(`https://study-server-site.vercel.app/study/${params.id}`)
       }
       ,
       {
         path:"/conform",
         element:<Confrom></Confrom>,
-        loader:()=>fetch('http://localhost:5000/submited')
+        loader:()=>fetch('https://study-server-site.vercel.app/submited')
       }
     ]
 

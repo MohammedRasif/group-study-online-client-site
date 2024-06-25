@@ -19,7 +19,7 @@ const SeeSubmited = ({studys}) => {
           }).then((result) => {
             if (result.isConfirmed) {
             
-            fetch(`http://localhost:5000/study/${_id}`,{
+            fetch(`https://study-server-site.vercel.app/study/${_id}`,{
                 method:'DELETE'
             })
             .then(res=>res.json())

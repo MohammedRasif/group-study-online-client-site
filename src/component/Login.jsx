@@ -53,24 +53,7 @@ const Login = () => {
             })
     }
 
-    // const handleLogin = event =>{
-    //     event.preventDefault();
-    //     const form = event.value;
-    //     const email = form.email.value;
-    //     const password = form.password.value;
-    //     console.log(email,password)
-    //     signIn(email,password)
-    //     .then(result =>{
-    //         const user =result.user;
-    //        console.log(user)
-    //         toast.success('SignIn Successfully')
-    //     })
-    //     .catch(error => {
-    //         //console.log(error)
-    //         toast.error(error?.massage)
-    //     })
-        
-    // }
+   
     return (
         <div>
             <div className="hero min-h-screen bg-base-200">

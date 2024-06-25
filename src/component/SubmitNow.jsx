@@ -16,7 +16,7 @@ const SubmitNow = () => {
         const allDetails = {title,marks,date,assignment,photo,pdf,description}
         //console.log(allDetails)
 
-        fetch('http://localhost:5000/study',{
+        fetch('https://study-server-site.vercel.app/study',{
             method:'POST',
             headers:{
                 'content-type':'application/json'
@@ -86,13 +86,13 @@ const SubmitNow = () => {
                      <label className="label">
                             <span className="label-text text-blue-800">Photo</span>
                         </label>
-                    <input type="url" name="photo" placeholder="Photo Url" className="input input-bordered" id="" />
+                    <input type="url" name="photo" placeholder="Photo Url" className="input input-bordered" id=""  required/>
                      </div>
                      <div className="form-control">
                      <label className="label">
                             <span className="label-text text-blue-800">PDF</span>
                         </label>
-                    <input type="url" name="pdf" placeholder="PDF Doc." className="input input-bordered" id="" />
+                    <input type="url" name="pdf" placeholder="PDF Doc." className="input input-bordered" id="" required />
                      </div>
                    </div>
                    
