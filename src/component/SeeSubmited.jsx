@@ -38,23 +38,7 @@ const SeeSubmited = ({studys}) => {
 
     }
 
-    const handleSubmit = async (event) => {
-      console.log("rasif");
-      // event.preventDefault();
-      const allContestSubmited = {
-        name: studys.title,
-        description: studys.description,
-        date: studys.date,
-        marks: studys.marks,
-        photo: studys.photo,
-        assignment: studys.assignment,
-        pdf: studys.pdf
-        
-
-      };
-      const res = await axiosSecure.post("/submited", allContestSubmited);
-      console.log("submited saved", res.data);
-    };
+  
 
 
     return (
@@ -111,7 +95,6 @@ const SeeSubmited = ({studys}) => {
           <button
           onClick={()=>handleDelete(_id)}
           className="btn btn-ghost btn-xs text-blue-800 font-bold">Delete</button>
-          <button onClick={handleSubmit} className="btn btn-ghost btn-xs text-blue-800 font-bold">Padding</button>
 
         </th>
       </tr>

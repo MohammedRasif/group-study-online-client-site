@@ -14,7 +14,9 @@ const NavBar = () => {
         user?.email ? <>
         <li> <NavLink to="/submit"> Submit Now  </NavLink></li>
         <li> <NavLink to="/submited"> Submited</NavLink></li>
-        <li> <NavLink to="/conform">Conform</NavLink> </li>
+        <li> <NavLink to="/conform">Pending Assignment</NavLink> </li>
+        <li> <NavLink to="/conformAssignment"> Conform Assignment</NavLink></li>
+
         </> :
          <li> <NavLink to="/register">Register</NavLink> </li>
 

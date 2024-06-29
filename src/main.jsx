@@ -17,6 +17,8 @@ import Submited from './component/Submited.jsx';
 import UpdateAssignment from './component/UpdateAssignment.jsx';
 import SeeDetails from './component/SeeDetails.jsx';
 import Confrom from './component/Confrom.jsx';
+import GiveMarks from './component/GiveMarks.jsx';
+import ConformAssignemt from './component/ConformAssignemt.jsx';
 
 const router = createBrowserRouter([
   {
@@ -41,12 +43,22 @@ const router = createBrowserRouter([
       {
         path:"/login",
         element:<Login></Login>
+      },
+      {
+        path:"/givemark",
+        element:<GiveMarks></GiveMarks>
+      }
+      ,
+      {
+        path:"/conformAssignment",
+        element:<ConformAssignemt></ConformAssignemt>
       }
       ,
       {
         path:"/submited",
         element:<Submited></Submited>,
         loader: () => fetch('https://study-server-site.vercel.app/study')
+        
       }
       ,
       {

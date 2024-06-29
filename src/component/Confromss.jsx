@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Confromss = ({ confromss }) => {
   return (
     <div>
@@ -14,6 +16,7 @@ const Confromss = ({ confromss }) => {
               <th> Difficulty level</th>
               <th> date</th>
               <th> PDF</th>
+              <th>Mark</th>
 
               <th></th>
             </tr>
@@ -46,6 +49,8 @@ const Confromss = ({ confromss }) => {
               <td>{confromss.assignment}</td>
               <td>{confromss.date}</td>
               <td>{confromss.pdf}</td>
+              <Link to={"/givemark"}><button  className="btn glass bg-blue-600 btn-xs text-white p-2 font-bold">Give Mark</button></Link>
+
 
               <th>
                 
