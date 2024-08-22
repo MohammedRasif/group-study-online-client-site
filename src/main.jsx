@@ -19,6 +19,7 @@ import SeeDetails from './component/SeeDetails.jsx';
 import Confrom from './component/Confrom.jsx';
 import GiveMarks from './component/GiveMarks.jsx';
 import ConformAssignemt from './component/ConformAssignemt.jsx';
+import PrivateRoute from './component/PrivateRoute.jsx';
 
 const router = createBrowserRouter([
   {
@@ -32,7 +33,7 @@ const router = createBrowserRouter([
       },
       {
         path:"/submit",
-        element:<SubmitNow></SubmitNow>
+        element:<PrivateRoute><SubmitNow></SubmitNow></PrivateRoute>
       }
       ,
       {
@@ -45,8 +46,9 @@ const router = createBrowserRouter([
         element:<Login></Login>
       },
       {
-        path:"/givemark",
-        element:<GiveMarks></GiveMarks>
+        path:"/givemark/:id",
+        element:<GiveMarks></GiveMarks>,
+        loader: ({params}) => fetch(`http://localhost:5000/submited/${params.id}`)
       }
       ,
       {
@@ -54,29 +56,31 @@ const router = createBrowserRouter([
         element:<ConformAssignemt></ConformAssignemt>
       }
       ,
+      
+      
       {
         path:"/submited",
         element:<Submited></Submited>,
-        loader: () => fetch('https://study-server-site.vercel.app/study')
+        loader: () => fetch('http://localhost:5000/study')
         
       }
       ,
       {
         path:"/update/:id",
         element:<UpdateAssignment></UpdateAssignment>,
-        loader: ({params}) => fetch(`https://study-server-site.vercel.app/study/${params.id}`)
+        loader: ({params}) => fetch(`http://localhost:5000/study/${params.id}`)
       }
       ,
       {
         path:"/seeDetails/:id",
         element:<SeeDetails></SeeDetails>,
-        loader: ({params}) => fetch(`https://study-server-site.vercel.app/study/${params.id}`)
+        loader: ({params}) => fetch(`http://localhost:5000/study/${params.id}`)
       }
       ,
       {
         path:"/conform",
         element:<Confrom></Confrom>,
-        loader:()=>fetch('https://study-server-site.vercel.app/submited')
+        loader:()=>fetch('http://localhost:5000/submited')
       }
     ]
 

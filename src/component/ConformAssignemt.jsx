@@ -1,6 +1,5 @@
-import React from 'react';
 
-const ConformAssignemt = () => {
+const MyAssignment = () => {
     return (
         <div>
             <h1>this is conform assignment route</h1>
@@ -8,4 +7,4 @@ const ConformAssignemt = () => {
     );
 };
 
-export default ConformAssignemt;
+export default MyAssignment;

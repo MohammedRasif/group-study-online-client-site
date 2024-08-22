@@ -1,15 +1,22 @@
 import { useForm } from "react-hook-form";
 import useAxioSecure from "../Hooks/useAxioSecure";
 import Swal from "sweetalert2";
+import { useContext } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const SubmitNow = () => {
+  const {user} = useContext(AuthContext)
+  //console.log(user.email)
+  const adderMail = user?.email
+  console.log(adderMail)
   const axiosSecure = useAxioSecure();
-  const { register, handleSubmit, reset,formState:{errors} } = useForm();
+  const { register, handleSubmit,formState:{errors} } = useForm();
   console.log(errors)
   const onSubmit = async (data) => {
     console.log(data)
     
       const contestItem = {
+        email:adderMail,
         title:data.title,
         //marks:data.marks,
         marks: parseFloat(data.marks),
@@ -18,11 +25,13 @@ const SubmitNow = () => {
         description: data.description,
         assignment: data.assignment,
         photo:data.photo,
-        
-        
+        status:"pending"
       };
+      console.log(contestItem)
+      
       const contestRes = await axiosSecure.post("/study", contestItem);
-      //console.log(contestRes.data)
+      
+      console.log(contestRes.data)
       if (contestRes.data.insertedId) {
         //show success popup
         //reset();
@@ -53,7 +62,7 @@ const SubmitNow = () => {
   //     const allDetails = {title,marks,date,assignment,photo,pdf,description}
   //     //console.log(allDetails)
 
-  //     fetch('https://study-server-site.vercel.app/study',{
+  //     fetch('http://localhost:5000/study',{
   //         method:'POST',
   //         headers:{
   //             'content-type':'application/json'

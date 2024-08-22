@@ -11,7 +11,7 @@ const SeeDetails = () => {
     const axiosSecure = useAxioSecure()
     
     const details = useLoaderData()
-    const {title,marks,date,assignment,photo,pdf,description,_id} = details
+    const {title,marks,date,assignment,photo,pdf,description,status} = details
 
     const handleSubmit = async (event) => {
       console.log("rasif");
@@ -23,7 +23,9 @@ const SeeDetails = () => {
         marks: marks,
         photo: photo,
         assignment: assignment,
-        pdf: pdf
+        pdf: pdf,
+        status:status
+
         
 
       };

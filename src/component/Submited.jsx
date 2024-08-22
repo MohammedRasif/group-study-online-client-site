@@ -6,12 +6,12 @@ const Submited = () => {
     const study = useLoaderData();
     console.log(study)
     // useEffect(()=>{
-    //     fetch('https://study-server-site.vercel.app/study')
+    //     fetch('http://localhost:5000/study')
     //     .then(res => res.json())
     //     .then(data => console.log(data))
     // },[])
     return (
-        <div className="pt-32">
+        <div className="p-32   grid md:grid-cols-1 lg:grid-cols-3">
             {
                 study.map(studys => <SeeSubmited
                 key={studys._id}
