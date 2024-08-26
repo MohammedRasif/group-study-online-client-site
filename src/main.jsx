@@ -53,7 +53,8 @@ const router = createBrowserRouter([
       ,
       {
         path:"/conformAssignment",
-        element:<ConformAssignemt></ConformAssignemt>
+        element:<ConformAssignemt></ConformAssignemt>,
+        loader:()=>fetch('http://localhost:5000/submited')
       }
       ,
       
@@ -79,7 +80,7 @@ const router = createBrowserRouter([
       ,
       {
         path:"/conform",
-        element:<Confrom></Confrom>,
+        element:<PrivateRoute><Confrom></Confrom></PrivateRoute>,
         loader:()=>fetch('http://localhost:5000/submited')
       }
     ]

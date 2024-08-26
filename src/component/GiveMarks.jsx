@@ -3,7 +3,8 @@ import Swal from "sweetalert2";
 
 const GiveMarks = () => {
   const submit = useLoaderData();
-  const {title,marks,date,assignment,photo,pdf,description,_id} = submit
+  const {name,title,marks,date,assignment,photo,pdf,description,_id} = submit
+  console.log(name)
 
   const handleUpdateMark = event =>{
     event.preventDefault();
@@ -11,14 +12,14 @@ const GiveMarks = () => {
     const marks = form.marks.value;
     const description=form.description.value;
     const status = "complete";
-    const title = form.title.value;
+    const name = form.name.value;
     const date = form.date.value;
     const assignment = form.assignment.value;
     const photo = form.photo.value;
     const pdf = form.pdf.value;
 
 
-    const updateDetails = {status,marks,description,title,date,assignment,photo,pdf}
+    const updateDetails = {status,marks,description,name,date,assignment,photo,pdf}
     //console.log(updateDetails)
 
     fetch(`http://localhost:5000/submited/${_id}`,{
@@ -67,6 +68,53 @@ const GiveMarks = () => {
       </div>
       <button className="btn glass bg-blue-500 text-white">Submited Now</button>
     </div>
+
+
+    <div>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4  hidden ">
+
+                        <div className="form-control">
+                        <label className="label">
+                            <span className="label-text text-blue-800">Title</span>
+                        </label>
+                        <input type="text" name="name" placeholder="title" defaultValue={name} className="input input-bordered" required />
+                        </div>
+                       
+                        
+                        <div className="form-control">
+                        <label className="label">
+                            <span className="label-text text-blue-800">Date</span>
+                        </label>
+                        <input type="date" name="date" className="input input-bordered" defaultValue={date} required />
+                        </div>
+
+
+                        
+                        <div className="form-control">
+                        <label className="label">
+                            <span className="label-text text-blue-800">assignment difficulty level</span>
+                        </label>
+                        <input type="text" name="assignment" placeholder="difficulty level" defaultValue={assignment} className="input input-bordered" required />
+                        </div>
+                    </div>
+                   <div  className="grid lg:grid-cols-2 gap-4 hidden">
+                     <div className="form-control" >
+                     <label className="label">
+                            <span className="label-text text-blue-800">Photo</span>
+                        </label>
+                    <input type="url" name="photo" placeholder="Photo Url" defaultValue={photo} className="input input-bordered" id="" />
+                     </div>
+                     <div className="form-control">
+                     <label className="label">
+                            <span className="label-text text-blue-800">PDF</span>
+                        </label>
+                    <input type="url" name="pdf" placeholder="PDF Doc." defaultValue={pdf} className="input input-bordered" id="" />
+                     </div>
+                   </div>
+    </div>
+
+
+
     </form>
   );
 };
