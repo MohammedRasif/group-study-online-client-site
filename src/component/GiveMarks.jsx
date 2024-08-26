@@ -22,7 +22,7 @@ const GiveMarks = () => {
     const updateDetails = {status,marks,description,name,date,assignment,photo,pdf}
     //console.log(updateDetails)
 
-    fetch(`http://localhost:5000/submited/${_id}`,{
+    fetch(`https://study-server-site.vercel.app/submited/${_id}`,{
         method:'PUT',
         headers:{
             'content-type':'application/json'

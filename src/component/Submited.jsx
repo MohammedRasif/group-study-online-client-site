@@ -6,7 +6,7 @@ const Submited = () => {
     const study = useLoaderData();
     console.log(study)
     // useEffect(()=>{
-    //     fetch('http://localhost:5000/study')
+    //     fetch('https://study-server-site.vercel.app/study')
     //     .then(res => res.json())
     //     .then(data => console.log(data))
     // },[])

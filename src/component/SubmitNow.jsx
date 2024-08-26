@@ -62,7 +62,7 @@ const SubmitNow = () => {
   //     const allDetails = {title,marks,date,assignment,photo,pdf,description}
   //     //console.log(allDetails)
 
-  //     fetch('http://localhost:5000/study',{
+  //     fetch('https://study-server-site.vercel.app/study',{
   //         method:'POST',
   //         headers:{
   //             'content-type':'application/json'
