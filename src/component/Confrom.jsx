@@ -4,7 +4,7 @@ import Confromss from "./Confromss";
 const Confrom = () => {
   const conform = useLoaderData();
   //const {_id,} = conform;
-  console.log(conform);
+  //console.log(conform);
   return (
     <div className="pt-32  ">
       <table className="table ">

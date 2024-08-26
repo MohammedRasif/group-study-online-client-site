@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 const GiveMarks = () => {
   const submit = useLoaderData();
   const {name,title,marks,date,assignment,photo,pdf,description,_id} = submit
-  console.log(name)
+  //console.log(name)
 
   const handleUpdateMark = event =>{
     event.preventDefault();
