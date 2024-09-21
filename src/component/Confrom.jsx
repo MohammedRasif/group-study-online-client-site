@@ -7,7 +7,7 @@ const Confrom = () => {
   //console.log(conform);
   return (
     <div className="pt-32  ">
-      <table className="table ">
+      <table className="table lg:flex-none md:flex-none flex">
         {/* head */}
 
         <thead>

@@ -44,12 +44,12 @@ const SeeSubmited = ({ studys }) => {
   };
 
   return (
-    <div className="overflow-x-auto pb-16  ">
-      <div className="card bg-base-100 w-96 shadow-xl">
+    <div className="overflow-x-auto pb-16 pt-20   ">
+      <div className="card bg-base-100 lg:w-96 md:w-80 shadow-xl">
         <figure>
           <img
             src={photo}
-            className="h-56 w-72 rounded-xl"
+            className=" h-56 w-80  rounded-xl"
           />
         </figure>
         <div className="card-body">
@@ -73,9 +73,13 @@ const SeeSubmited = ({ studys }) => {
     </div>
           <div className="card-actions justify-between">
             <Link to={`/seeDetails/${_id}`}><button className="btn glass bg-blue-500 text-white">Details</button></Link>
-            <Link to={`/update/${_id}`}><button className="btn glass bg-blue-500 text-white">Update</button></Link>
             {email === user.email&&(
-                          <Link onClick={() => handleDelete(_id)}><button className="btn glass bg-blue-500 text-white">Delete</button></Link>
+                          <Link to={`/update/${_id}`}><button className="btn glass bg-blue-500 text-white">Update</button></Link>
+
+            )
+            }
+            {email === user.email&&(
+                          <Link onClick={() => handleDelete(_id)}><button className="btn glass bg-blue-500 lg:mt-0 md:mt-0 mt-2 text-white">Delete</button></Link>
 
             )
 

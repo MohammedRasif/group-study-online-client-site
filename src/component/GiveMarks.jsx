@@ -22,7 +22,7 @@ const GiveMarks = () => {
     const updateDetails = {status,marks,description,name,date,assignment,photo,pdf}
     //console.log(updateDetails)
 
-    fetch(`https://study-server-site.vercel.app/submited/${_id}`,{
+    fetch(`http://localhost:5000/submited/${_id}`,{
         method:'PUT',
         headers:{
             'content-type':'application/json'
@@ -48,26 +48,31 @@ const GiveMarks = () => {
 
   return (
     <form onSubmit={handleUpdateMark}>
-      <div className="pt-28 text-center mb-24">
-      <h1 className="text-5xl text-blue-500">Assignment Mark</h1>
-      <div className="mt-7">
-        <h1 className="text-left ml-96 pl-56 font-bold">Mark</h1>
-        <input
-          type="text" name="marks"
-          placeholder="Give Assignment Mark"
-          className="input input-bordered w-full max-w-xs "
-        />
-      </div>
-      <div className="mt-5 mb-10">
-        <h1 className="text-left ml-96 pl-56 font-bold">Feedback</h1>
-        <textarea
-          placeholder="Bio"
-          name="description"
-          className="textarea textarea-bordered textarea-md w-full max-w-xs"
-        ></textarea>
-      </div>
-      <button className="btn glass bg-blue-500 text-white">Submited Now</button>
-    </div>
+      <div className="pt-28 text-center mb-24 lg:p-0 md:p-0 p-5">
+  <h1 className="text-5xl text-blue-500">Assignment Mark</h1>
+
+  <div className="mt-7">
+    <h1 className="text-left font-bold lg:ml-[600px] md:ml-56">Mark</h1>
+    <input
+      type="text"
+      name="marks"
+      placeholder="Give Assignment Mark"
+      className="input input-bordered w-full max-w-xs mx-auto"
+    />
+  </div>
+
+  <div className="mt-5 mb-10">
+    <h1 className="text-left font-bold lg:ml-[600px] md:ml-56">Feedback</h1>
+    <textarea
+      placeholder="Bio"
+      name="description"
+      className="textarea textarea-bordered textarea-md w-full max-w-xs mx-auto"
+    ></textarea>
+  </div>
+
+  <button className="btn glass bg-blue-500 text-white">Submit Now</button>
+</div>
+
 
 
     <div>

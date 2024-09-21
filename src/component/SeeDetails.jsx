@@ -44,31 +44,32 @@ const SeeDetails = () => {
 
 
     return (
-    <div className="card w-96  ml-[600px] pt-24">
-  <figure><img src={photo} alt="Shoes" /></figure>
-  <div className="card-body">
-    <h2 className="card-title">{title}</h2>
-    <p>{description}</p>
-    <div className="flex items-center">
-        <BsCalendar2Date className="text-blue-800 "></BsCalendar2Date>
-        <h1 className="pl-3">{date}</h1>
+      <div className="card w-full max-w-md mx-auto pt-24 p-5">
+      <figure><img src={photo} alt="Shoes" className="w-full h-auto" /></figure>
+      <div className="card-body">
+        <h2 className="card-title text-lg md:text-xl">{title}</h2>
+        <p className="text-sm md:text-base">{description}</p>
+        <div className="flex items-center">
+          <BsCalendar2Date className="text-blue-800" />
+          <h1 className="pl-3 text-sm md:text-base">{date}</h1>
+        </div>
+        <div className="flex items-center">
+          <BsBookmarkStar className="text-blue-800" />
+          <h1 className="pl-3 text-sm md:text-base">{marks}</h1>
+        </div>
+        <div className="flex items-center">
+          <MdOutlineAssignment className="text-blue-800" />
+          <h1 className="pl-3 text-sm md:text-base">{assignment}</h1>
+        </div>
+        <div className="flex items-center">
+          <FaRegFilePdf className="text-blue-800" />
+          <h1 className="pl-3 text-sm md:text-base">{pdf}</h1>
+        </div>
+        <button onClick={handleSubmit} className="btn glass bg-blue-500 text-white hover:text-black mt-4">Take Assignment</button>
+        <h1 className="text-2xl text-blue-800 font-bold my-4 hidden inline-block">---------------o---------------</h1>
+      </div>
     </div>
-    <div className="flex items-center">
-        <BsBookmarkStar className="text-blue-800 "></BsBookmarkStar>
-        <h1 className="pl-3">{marks}</h1>
-    </div>
-    <div className="flex items-center">
-        <MdOutlineAssignment className="text-blue-800 "></MdOutlineAssignment>
-        <h1 className="pl-3">{assignment}</h1>
-    </div>
-    <div className="flex items-center">
-        <FaRegFilePdf className="text-blue-800 "></FaRegFilePdf>
-        <h1 className="pl-3">{pdf}</h1>
-    </div>
-    <button onClick={handleSubmit} className="btn glass bg-blue-500 text-white hover:text-black">Take Assignment</button>
-    <h1 className="text-2xl text-blue-800 font-bold">---------------o---------------</h1>
-  </div>
-</div>
+    
     );
 };
 

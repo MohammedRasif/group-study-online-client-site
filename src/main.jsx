@@ -48,13 +48,13 @@ const router = createBrowserRouter([
       {
         path:"/givemark/:id",
         element:<GiveMarks></GiveMarks>,
-        loader: ({params}) => fetch(`https://study-server-site.vercel.app/submited/${params.id}`)
+        loader: ({params}) => fetch(`http://localhost:5000/submited/${params.id}`)
       }
       ,
       {
         path:"/conformAssignment",
         element:<ConformAssignemt></ConformAssignemt>,
-        loader:()=>fetch('https://study-server-site.vercel.app/submited')
+        loader:()=>fetch('http://localhost:5000/submited')
       }
       ,
       
@@ -62,26 +62,26 @@ const router = createBrowserRouter([
       {
         path:"/submited",
         element:<Submited></Submited>,
-        loader: () => fetch('https://study-server-site.vercel.app/study')
+        loader: () => fetch('http://localhost:5000/study')
         
       }
       ,
       {
         path:"/update/:id",
         element:<UpdateAssignment></UpdateAssignment>,
-        loader: ({params}) => fetch(`https://study-server-site.vercel.app/study/${params.id}`)
+        loader: ({params}) => fetch(`http://localhost:5000/study/${params.id}`)
       }
       ,
       {
         path:"/seeDetails/:id",
         element:<SeeDetails></SeeDetails>,
-        loader: ({params}) => fetch(`https://study-server-site.vercel.app/study/${params.id}`)
+        loader: ({params}) => fetch(`http://localhost:5000/study/${params.id}`)
       }
       ,
       {
         path:"/conform",
         element:<PrivateRoute><Confrom></Confrom></PrivateRoute>,
-        loader:()=>fetch('https://study-server-site.vercel.app/submited')
+        loader:()=>fetch('http://localhost:5000/submited')
       }
     ]
 
